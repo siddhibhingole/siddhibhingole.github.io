@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhi Bhingole | Frontend Developer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4f46e5', // Indigo 600
+                        secondary: '#ec4899', // Pink 500
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom animated gradient background for the hero section */
+        .hero-gradient {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        SB.
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#skills" class="text-gray-600 hover:text-primary transition-colors font-medium">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary transition-colors font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary transition-colors font-medium">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">About</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10 hero-gradient"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Hello, I'm</h2>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
+                Siddhi Bhingole
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10">
+                Frontend Enthusiast & Open Source Contributor. <br class="hidden md:block"/> 
+                Passionate about building scalable web applications and community-driven tech.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all transform hover:-translate-y-1">
+                    View My Work
+                </a>
+                <!-- Update this href with a link to your Google Drive resume -->
+                <a href="#" class="px-8 py-3 rounded-full bg-white text-gray-700 border border-gray-200 font-medium hover:bg-gray-50 hover:text-primary shadow-sm transition-all">
+                    <i class="fas fa-file-pdf mr-2"></i> Resume
+                </a>
+            </div>
+            
+            <div class="mt-12 flex justify-center space-x-6">
+                <a href="https://github.com/siddhibhingole" target="_blank" class="text-gray-400 hover:text-gray-900 transition-colors text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/siddhi-bhingole-64b7b3373" target="_blank" class="text-gray-400 hover:text-[#0A66C2] transition-colors text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.kaggle.com/siddhibhingole" target="_blank" class="text-gray-400 hover:text-[#20BEFF] transition-colors text-2xl">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <!-- Replace src with your actual profile picture link -->
+                    <div class="relative w-72 h-72 mx-auto">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary animate-pulse opacity-20"></div>
+                        <img src="https://ui-avatars.com/api/?name=Siddhi+Bhingole&size=512&background=random" alt="Siddhi Bhingole" class="rounded-full w-full h-full object-cover shadow-2xl relative z-10 border-4 border-white">
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        I am an Engineering student at <strong>Nutan Maharashtra Institute of Engineering and Technology (NMIET)</strong> with a deep passion for frontend development and open-source software. I enjoy turning complex problems into beautiful, intuitive, and responsive web experiences.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Beyond coding, I am highly active in tech communities. I am proud to be an <strong>Ambassador & Contributor for GirlScript Summer of Code (GSSoC) 2026</strong> and an active participant in the <strong>AWS Student Builder Group</strong> at my campus, where I continuously learn about cloud technologies and collaborate with peers.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <h3 class="font-bold text-gray-900 text-lg">GSSoC 2026</h3>
+                            <p class="text-sm text-gray-500">Ambassador & Contributor</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <h3 class="font-bold text-gray-900 text-lg">Education</h3>
+                            <p class="text-sm text-gray-500">NMIET Engineering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Technical Skills</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <!-- Skill 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fab fa-c text-5xl text-[#61DAFB] mb-4"></i>
+                    <h3 class="font-bold text-gray-800">C</h3>
+                </div>
+                <!-- Skill 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fab fa-python text-5xl text-[#3776AB] mb-4"></i>
+                    <h3 class="font-bold text-gray-800">Python</h3>
+                </div>
+                <!-- Skill 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fab fa-html5 text-5xl text-[#E34F26] mb-4"></i>
+                    <h3 class="font-bold text-gray-800">HTML & CSS</h3>
+                </div>
+                <!-- Skill 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fab fa-git-alt text-5xl text-[#F05032] mb-4"></i>
+                    <h3 class="font-bold text-gray-800">Git & GitHub</h3>
+                </div>
+                <!-- Skill 5 (Add from Resume) -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fab fa-aws text-5xl text-[#FF9900] mb-4"></i>
+                    <h3 class="font-bold text-gray-800">AWS Basics</h3>
+                </div>
+                <!-- Skill 6 (Add from Resume) -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <div class="text-5xl font-black text-[#00599C] mb-4">C++</div>
+                    <h3 class="font-bold text-gray-800">C++</h3>
+                </div>
+                <!-- Skill 7 Placeholder -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fas fa-code text-5xl text-gray-400 mb-4"></i>
+                    <h3 class="font-bold text-gray-800">Your Skill Here</h3>
+                </div>
+                <!-- Skill 8 Placeholder -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                    <i class="fas fa-database text-5xl text-gray-400 mb-4"></i>
+                    <h3 class="font-bold text-gray-800">Your Skill Here</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Featured Projects & Open Source</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded"></div>
+                <p class="mt-4 text-gray-500">Highlights from my GitHub and Resume</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-gradient-to-r from-blue-100 to-indigo-100 flex items-center justify-center">
+                        <i class="fab fa-react text-6xl text-primary opacity-50 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded">Open Source</span>
+                            <div class="flex gap-2">
+                                <a href="https://github.com/siddhibhingole/100-reactjs-projects" target="_blank" class="text-gray-400 hover:text-gray-900"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">100+ ReactJS Projects</h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-1">
+                            Contributed to a massive open-source repository designed to help beginners and intermediate developers learn React JS through hands-on project building.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">React</span>
+                            <span class="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-gradient-to-r from-purple-100 to-pink-100 flex items-center justify-center">
+                        <i class="fas fa-server text-6xl text-secondary opacity-50 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-semibold bg-purple-100 text-purple-800 px-2 py-1 rounded">Open Source</span>
+                            <div class="flex gap-2">
+                                <a href="https://github.com/siddhibhingole/daytona" target="_blank" class="text-gray-400 hover:text-gray-900"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Daytona Contributor</h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-1">
+                            Forked and explored Daytona, a secure and elastic infrastructure for running AI-generated code. Active participant in modern open-source toolchains.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">TypeScript</span>
+                            <span class="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Resume Placeholder) -->
+                <div class="bg-white rounded-xl border border-dashed border-gray-300 overflow-hidden hover:border-primary transition-colors duration-300 group flex flex-col justify-center items-center p-8 text-center">
+                    <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-plus text-2xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Add Your Project</h3>
+                    <p class="text-gray-500 text-sm">
+                        Replace this card with a major project listed on your resume. Describe what you built and the impact it had.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-gray-400 mb-10 text-lg">
+                I'm currently looking for new opportunities and collaborations. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            
+            <a href="mailto:your.email@example.com" class="inline-block px-8 py-4 rounded-full bg-primary hover:bg-indigo-500 text-white font-bold text-lg shadow-lg shadow-indigo-900/50 transition-all transform hover:-translate-y-1 mb-12">
+                Say Hello <i class="fas fa-paper-plane ml-2"></i>
+            </a>
+
+            <div class="flex justify-center space-x-8 border-t border-gray-800 pt-10">
+                <a href="https://github.com/siddhibhingole" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                    <span class="sr-only">GitHub</span>
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/siddhi-bhingole-64b7b3373" target="_blank" class="text-gray-400 hover:text-[#0A66C2] transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="https://www.kaggle.com/siddhibhingole" target="_blank" class="text-gray-400 hover:text-[#20BEFF] transition-colors">
+                    <span class="sr-only">Kaggle</span>
+                    <i class="fab fa-kaggle text-3xl"></i>
+                </a>
+            </div>
+            
+            <p class="mt-10 text-gray-600 text-sm">
+                &copy; 2026 Siddhi Bhingole. Built with HTML & Tailwind CSS.
+            </p>
+        </div>
+    </section>
+
+    <!-- Simple Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
